@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<h1 id="num-amt">Loading Number</h1>
+
+		<br>
+
+		<div id="random">
+			<a href="random" id="rand-button">Random Game</a>
+		</div>
+
+		<br>
+
+		<h2 style="text-align: center">Some games</h2>
+
+		<div id="images"></div>
+
+		<script>
+			const submissions = "<%= games %>";
+			const images = ("<%= images %>").split(",");
+			const links = ("<%= links %>").split(",");
+			const titles = ("<%= title %>").split(",");
+
+			document.getElementById("num-amt").innerHTML = submissions + " Total Games Submitted";
+
+			let container = document.getElementById("images");
+			container.innerHTML = "";
+
+			console.log(images);
+
+			for (let i=0; i < images.length; i++) {
+				let img = document.createElement("img");
+				let a = document.createElement("a");
+
+				img.alt = "(No image found)";
+				img.src = images[i];
+
+				a.href = "/game/" + links[i];
+				a.innerHTML = titles[i];
+
+				a.appendChild(img)
+
+				container.appendChild(a);
+			}
+		</script>
+	</body>
+</html>

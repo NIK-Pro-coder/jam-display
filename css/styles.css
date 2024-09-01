@@ -1,0 +1,100 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+#container {
+	background-color: #111111;
+
+	display: grid;
+	grid-template-areas:
+		"cover titile"
+		"cover author"
+		"cover platforms";
+
+	border: 5px solid grey;
+	border-radius: 10px;
+	margin: 5%;
+	margin-top: 2.5%;
+	padding: 5%;
+}
+
+#cover-link {
+	grid-area: cover;
+}
+
+#title {
+	grid-area: title;
+	font-size: 1.5em;
+}
+
+#author {
+	grid-area: author;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: gold;
+}
+
+a:visited {
+	color: goldenrod;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	border-radius: 5%;
+}
+
+#random {
+	text-align: center;
+	font-size: 1.5em;
+}
+
+#rand-button {
+	margin: 5px;
+	padding: 5px;
+	border: 5px solid goldenrod;
+	border-radius: 5px;
+	background-color: gold;
+	color: black;
+	text-decoration: none;
+}
+
+#platforms {
+	font-size: 1.5em;
+	grid-area: platforms;
+}
+
+#num-amt {
+	font-size: 4em;
+	text-align: center;
+}
+
+#images {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+#notfound {
+	text-align: center;
+	font-size: 4em;
+}
+
+#home {
+	margin: 5px;
+	padding: 5px;
+	border: 5px solid goldenrod;
+	border-radius: 5px;
+	background-color: gold;
+	color: black;
+	text-decoration: none;
+	font-size: 2em;
+}

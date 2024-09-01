@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../css/styles.css" />
+		<title><%= game.title %></title>
+		<link rel="icon" type="image/x-icon" href="<%= game.cover %>">
+	</head>
+	<body>
+		<a href="/" id="home">Home</a>
+
+		<div id="container">
+			<h1><a href="#" id="title">Loading Title</a></h1>
+			<h2>By <a href="#" id="author">Loading Author</a></h2>
+
+			<a id="cover-link">
+				<img id="cover" src="#" alt="">
+			</a>
+
+			<p id="platforms">Loading Platforms</p>
+		</div>
+
+		<div id="random">
+			<a href="../random" id="rand-button">Random Game</a>
+		</div>
+
+		<script>
+			const title = "<%= game.title %>";
+			const game_url = "<%= game.url %>";
+
+			const author = "<%= game.user.name %>";
+			const author_url = "<%= game.user.url %>";
+
+			const cover_url = "<%= game.cover %>";
+
+			const platforms = "<%= game.platforms %>";
+
+			document.getElementById("title").innerHTML = title;
+			document.getElementById("title").href = game_url;
+			document.getElementById("cover-link").href = game_url;
+
+			document.getElementById("author").innerHTML = author;
+			document.getElementById("author").href = author_url;
+
+			document.getElementById("cover").src = cover_url;
+			document.getElementById("cover").alt = "Image for '" + title + "'";
+
+			document.getElementById("platforms").innerHTML = "Platform(s) : " + platforms.replace(/,/g, ", ");
+		</script>
+	</body>
+</html>
